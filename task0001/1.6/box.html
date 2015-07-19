@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>box model</title>
+	<link rel="stylesheet" href="css/box.css">
+</head>
+<body>
+	<p>1.用两种方法来实现一个背景色为红色、宽度为960px的DIV在浏览器中居中</p>
+	<div class="center1"></div>
+	<div class="center2"><div></div></div>
+
+	<p>2.有的圆角矩形是复杂图案，无法直接用border-radius，请在不使用border-radius的情况下实现一个可复用的高度和宽度都自适应的圆角矩形</p>
+	<div class="radius1">
+		<div class="border">
+			<div class="border1"></div>
+			<div class="border2"></div>
+			<div class="border3"></div>
+			<div class="border4"></div>
+		</div>
+		<div class="content">文字内容，我是通过纯css实现的</div>
+		<div class="border">
+			<div class="border4"></div>
+			<div class="border3"></div>
+			<div class="border2"></div>
+			<div class="border1"></div>
+		</div>
+	</div>
+
+	<p>3.用两种不同的方法来实现一个两列布局，其中左侧部分宽度固定、右侧部分宽度随浏览器宽度的变化而自适应变化 </p>
+		<div class="DIV-A">DIV-A</div>
+		<div class="DIV-B">DIV-B</div>
+		<div class="DIV-C">DIV-C</div>
+
+		<div class="DIV-a">DIV-a</div>
+		<div class="DIV-b">DIV-b</div>
+		<div class="DIV-c">DIV-c</div>
+
+	<p>4.用两种不同的方式来实现一个三列布局，其中左侧和右侧的部分宽度固定，中间部分宽度随浏览器宽度的变化而自适应变化</p>
+		<div class="DIV-1">DIV-1</div>
+		<div class="DIV-3">DIV-3</div>
+		<div class="DIV-2">DIV-2</div>
+		
+		<div class="column">
+			<div class="DIV-01">DIV-01</div>
+			<div class="DIV-02">DIV-02</div>
+			<div class="DIV-03">DIV-03</div>
+		</div>
+
+	<p>5.实现一个浮动布局，红色容器中每一行的蓝色容器数量随着浏览器宽度的变化而变化 </p>
+		<div class="container">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+</body>
+</html>

@@ -1,0 +1,187 @@
+.center1 {
+	width: 960px;
+	height: 50px;
+	background-color: red;
+	margin: 0 auto;
+}
+
+.center2 {
+	text-align: center;
+}
+
+.center2 div {
+	width: 960px;
+	height: 50px;
+	display: inline-block;
+	background-color: red;
+}
+
+.DIV-A {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	float: left;
+	color: #fff;
+}
+
+.DIV-B {
+	height: 50px;
+	background-color: blue;
+	color: #fff;
+}
+
+.DIV-C {
+	height: 50px;
+	background-color: yellow;
+	clear: both;
+}
+
+.DIV-a {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	position: absolute;
+	color: #fff;
+}
+
+.DIV-b {
+	height: 50px;
+	background-color: blue;
+	color: #fff;
+	margin-left: 50px 
+}
+
+.DIV-c {
+	height: 50px;
+	background-color: yellow;
+	clear: both;
+}
+
+.DIV-a {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	position: absolute;
+	color: #fff;
+}
+
+.DIV-b {
+	height: 50px;
+	background-color: blue;
+	color: #fff;
+	margin-left: 50px 
+}
+
+.DIV-c {
+	height: 50px;
+	background-color: yellow;
+	clear: both;
+}
+
+.DIV-1 {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	color: #fff;
+	float: left;
+}
+
+.DIV-2 {
+	height: 50px;
+	background-color: blue;
+	color: #fff;
+	margin-left: 50px;
+}
+
+.DIV-3 {
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+	float: right;
+}
+
+.column {
+	position: relative;
+}
+
+.DIV-01 {
+	width: 50px;
+	height: 50px;
+	background-color: red;
+	color: #fff;
+	position: absolute;
+	left: 0;
+}
+
+.DIV-02 {
+	height: 50px;
+	background-color: blue;
+	color: #fff;
+	margin-left: 50px;
+}
+
+.DIV-03 {
+	width: 50px;
+	height: 50px;
+	background-color: yellow;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.container {
+	background-color: red;
+	padding: 10px;
+	overflow: hidden;
+}
+
+.container div {
+	width: 100px;
+	height: 50px;
+	background-color: blue;
+	float: left;
+	margin: 5px;
+}
+
+.radius1 {
+	margin: 0 auto;
+}
+
+.radius1 .border {
+	color: #000;
+}
+
+.radius1 .border div {
+	height: 2px;
+}
+
+.radius1 .border .border1 {
+	margin: 0 7px;
+	background-color: #000;
+}
+
+.radius1 .border .border2 {
+	margin: 0 3px;
+	border-right: 4px solid;
+	border-left: 4px solid;
+}
+
+.radius1 .border .border3 {
+	margin: 0 2px;
+	border-right: 2px solid;
+	border-left: 2px solid;
+}
+
+.radius1 .border .border4 {
+	margin: 0 1px;
+	border-right: 2px solid;
+	border-left: 2px solid;
+	height: 4px;
+}
+.radius1 .content {
+	border-left: 2px solid #000;
+	border-right: 2px solid #000;
+	text-align: center;
+}
+
+
