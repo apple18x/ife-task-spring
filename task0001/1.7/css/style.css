@@ -1,4 +1,4 @@
-body,p,ul,h1,h2,h3,h4,h5,h6{
+body,p,ul,h1,h2,h3,h4,h5,h6,input{
     padding: 0;
     margin: 0;
 }
@@ -48,10 +48,56 @@ header nav ul li {
     margin-left: 28px;
 }
 
-.wrapper {
-    position: relative;
-    width: 980px;
-    margin: 0 auto;
+footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+}
+
+footer nav {
+    text-align: center;
+    border-bottom: 1px solid #333333;
+}
+
+footer nav ul li {
+    display: inline-block;
+    line-height: 35px;
+    margin-right: 25px;
+}
+
+footer .links {
+    height: 250px;
+    padding-top: 43px;
+}
+
+footer .links ul {
+    width: 176px;
+    margin-right: 20px;
+    float: left;
+}
+
+footer .links a:hover {
+    text-decoration: underline;
+}
+
+footer .links h4 {
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+footer .links li {
+    font-size: 8px;
+    line-height: 18px;
+}
+
+footer .copyright {
+    font-size: 11px;
+    text-align: center;
+    line-height: 100%;
+}
+
+footer .copyright p {
+    margin-bottom: 20px;
 }
 
 .github-icon {
@@ -73,7 +119,9 @@ header nav ul li {
     color: #fff;
     position: relative;
 }
+
 .container {
+    position: relative;
     width: 980px;
     margin: 0 auto;
 }
@@ -145,6 +193,7 @@ header nav ul li {
     padding: 0 30px 25px;
     font-size: 12px;
     line-height: 170%;
+    text-indent: 24px;
 }
 
 .intro {
@@ -181,19 +230,357 @@ header nav ul li {
     text-indent: 28px;
 }
 
-footer {
-    background-color: #000;
-    color: #fff;
+/*blog page*/
+
+.blog-content {
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.blog-main {
+    float: left;
+    width: 710px;
+    margin-right: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.blog-main section {
+    position: relative;
+    background-color: #fff;
+    padding: 12px 22px 16px; 
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.blog-main section h3 {
+    color: #a660b7;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: bold;
+}
+
+.blog-main section h4 {
+    color: #666;
+    font-size: 12px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.blog-main section p {
+    color: #000;
+    font-size: 12px;
+    line-height: 20px;
+    text-indent: 24px;
+}
+.blog-main section h5 {
+    margin-top: 28px;
+    float: right;
+    color: #999999;
     font-size: 12px;
 }
 
-footer nav {
-    text-align: center;
-    border-bottom: 1px solid #333333;
+.blog-tag {
+    position: absolute;
+    left: -50px;
+    top: 20px;
+    width: 50px;
 }
 
-footer nav ul li {
+.blog-tag .tag {
+    background-color: #522a5c;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+}
+
+.blog-tag .tag1 {
+    background-color: #522a5c;
+}
+
+.blog-tag .tag2 {
+    background-color: #a660b7;
+}
+
+.blog-main ul {
+    color: #000;
+    font-size: 12px;
+    line-height: 100%;
+    margin-top: 10px;
+    margin-bottom: 100px;
+    padding-left: 66px;
+    overflow: hidden;
+}
+
+.blog-main ul li {
+    padding: 12px 18px 11px;
+    margin: 0 5px;
+    background-color: #fff;
+    float: left;
+}
+
+.blog-main ul li: hover {
+
+}
+
+.page .crtpage {
+    color: #fff;
+    background-color: #a660b7;
+}
+
+.blog-sider {
+    float: right;
+    width: 260px;
+    margin-top: 20px;
+}
+
+.blog-sider .search {
+    padding: 19px;
+    background-color: #fff;
+}
+
+.blog-sider .search input {
+    height: 40px;
+    width: 129px;
+    border: 1px solid #ddd; 
+    padding-left: 40px;
+    background: url(../img/searchicon.png) no-repeat 0 0;
+    color: #999; 
+}
+
+.blog-sider .search .btngo {
+    float: right;
+    background-color: #ddd;
+    width: 51px;
+    height: 42px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+}
+
+.blog-sider .category {
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.blog-sider .category ul li {
+    height: 49px;
+    border-bottom: 1px solid #ddd;
+    border-left: 4px solid #dfc6e6;
+    padding-left: 18px;
+    line-height: 49px;
+    font-size: 9px;
+    color: #666;
+}
+
+.blog-sider .category ul li:hover {
+    border-left: 4px solid #522a5c;
+}
+
+.blog-sider .calendar {
+    padding: 24px 19px 26px 20px;
+    font-size: 9px;
+    background-color: #fff;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.blog-sider .cal-header {
+    overflow: hidden;
+}
+
+.blog-sider .cal-header p {
+    float: left;
+    padding-left: 13px;
+    padding-right: 16px; 
+}
+
+.blog-sider .cal-header h6 {
+    float: left;
+    width: 151px;
+    text-align: center;
+}
+
+.blog-sider .calendar li {
+    border-bottom: 1px solid #eee;
+    color: #999;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    overflow: hidden;
+}
+.blog-sider .calendar .hlday {
+    background-color: #773c88;
+    color: #fff;
+}
+
+.blog-sider .calendar ul li p {
+    float: left;
+    line-height: 20px;
+    width: 31px;
+    text-align: center;
+}
+
+.blog-sider .tags {
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 13px 20px 33px 16px; 
+    color: #773c88;
+}
+
+.blog-sider .tags h6 {
+    color: #666;
+    line-height: 100%;
+    margin-bottom: 22px;
+}
+
+.blog-sider .tags-content {
+    overflow: hidden;
+}
+
+.blog-sider .tags-content h2 {
+    float: left;
+    font-size: 23px;
+    height: 38px;
+}
+
+.blog-sider .tags-content h3 {
+    float: left;
+    font-size: 16px;
+    height: 38px;
+}
+
+.blog-sider .tags-content h4 {
+    float: left;
+    font-size: 12px;
+    height: 38px;
+}
+
+.blog-sider .tags-content h5 {
+    float: left;
+    font-size: 9px;
+    height: 38px;
+}
+
+/*gallary page*/
+.gallary-content {
+    overflow: hidden;
+    background-color: #eeeeee;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+.gallary-main {
+    float: left;
+    width: 710px;
+    margin-right: 10px;
+    overflow: hidden; 
+}
+
+.gallary-main ul li {
+    float: left;
+    border-top: 4px solid #dfc6e6;
+    border-left: 1px solid #eee;
+    padding: 15px 20px 20px;
+    font-size: 10px;
+    line-height: 100%;
+    background-color: #fff;
+}
+
+.gallary-main ul li:hover {
+    border-bottom: 1px solid #eee;
+}
+
+.gallary-main ul .gtabs2 {
+    border-top: 4px solid #522a5c;
+}
+
+.gallary-main ul .gtabs3 {
+    border-top: 4px solid #5900b2;
+}
+
+.gallary-main ul .gtabs4 {
+    border-top: 4px solid #8c2300;
+}
+
+.gallary-main ul .gtabs5 {
+    border-top: 4px solid #d9a300;
+}
+
+.gtabs-content {
+    background-color: #fff;
+    padding: 14px 5px 26px;
+}
+.gtabs-content img {
+    float: left;
+    margin: 5px;
+}
+
+.gallary-main .more {
+    background-color: #fff;
+    color: #666;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    clear: both;
+    font-size: 12px;
+}
+
+.gallary-main .more p {
     display: inline-block;
-    line-height: 35px;
-    margin-right: 25px;
+    padding-left: 31px;
+    background: url(../img/more.png) no-repeat;
+    background-position: 0 19px ;
+}
+
+.gallary-main .more p a {
+     color: #000;
+}
+
+
+
+
+
+
+
+.gallary-sider {
+    float: right;
+    width: 260px;
+}
+
+.gallary-sider .search {
+    padding: 19px;
+    background-color: #fff;
+}
+
+.gallary-sider .search input {
+    height: 40px;
+    width: 129px;
+    border: 1px solid #343434; 
+    padding-left: 40px;
+    background: url(../img/searchicon.png) no-repeat 0 0;
+    color: #333; 
+}
+
+.gallary-sider .search .btngo {
+    float: right;
+    background-color: #999;
+    border: 1px solid #343434;
+    border-left: 0px; 
+    width: 50px;
+    height: 40px;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+}
+
+.gallary-sider .rank {
+    margin-top: 10px;
+    padding: 21px 13px 36px; 
+    background-color: #fff;
+
 }
