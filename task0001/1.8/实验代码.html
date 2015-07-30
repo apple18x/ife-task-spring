@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body,ul,li{ 
+            padding:0; 
+            margin:0;
+        }
+        ul,li{ 
+            list-style:none;
+        }
+        .block {
+            background-color: #f3eee1;
+            height: 50px;
+            margin: -10px;
+        }
+        span {
+            background-color: #fff234;
+            margin: -10px; 
+        }
+        h6 {
+            display: inline-block;
+            width: 70px;
+            background-color: #a23422;
+            margin:-10px;
+        }
+        .parent {
+            background-color: #ffe112;
+            width: 400px;
+            overflow: hidden;
+        }
+        .child {
+            background-color: #7ff211;
+            height: 50px;
+            width: 300px;
+            margin-bottom:-10px; 
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+        .inner {
+            background: #eee;
+            width: auto;
+            height: 50px;
+            margin-right: -100px;
+        }
+
+        
+        .container1{ 
+            height:210px; 
+            width:460px; 
+            border:5px solid #000;
+        }
+        ul{ 
+            height:210px; 
+            overflow:hidden; 
+            margin-right:-20px;
+        }
+        /*一个负的margin-right,相当于把ul的宽度增加了20px*/
+        li{ 
+            height:100px; 
+            width:100px; 
+            background:#09F; 
+            float:left; 
+            margin-right:20px; 
+            margin-bottom:10px;
+        }
+        .element-prt {
+            overflow: hidden;
+        }
+        .element {
+            height: 100px;
+            width: 100px;
+            float: left;
+            /*margin-right: -50px;*/
+        }
+        .element1 {
+            background-color: #eef;
+        }
+        .element2 {
+            background-color: #3324ee;
+        }
+        .element3 {
+            background-color: #fff398;
+            margin-left: -50px;
+        }
+        .square {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+            background-color: #eee;
+        }
+        .square-prt {
+            position: relative;
+            height: 150px;
+        }
+
+        #wrap{
+            overflow:hidden;
+            width:580px;
+            margin:0 auto;
+        }
+        #left,#center,#right{
+            margin-bottom:-200px;
+            padding-bottom:200px;
+            font-size: 12px;
+        }
+        #left {
+            float:left;
+            width:140px;
+            height: 50px;
+            background:#777;
+        }
+        #center {
+            float:left;
+            width:300px;
+            height:100px;
+            background:#888;
+        }
+        #right {
+            float:right;
+            width:140px;
+            height:200px;
+            background:#999;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">我是块状元素，位置由文档流控制</div>
+    我是谁我是谁我是谁我是谁我是谁我是谁我是谁我是谁我是谁我是谁我<span>我是行内元素，位置由文档流控制</span>是谁我是谁我是谁我是谁
+    asdfjksdjfsa;jdlkjflksajdlkf;jsalkjfdlksjlkfdj;lksajfdlsadasdf<h6>我是inline-block元素，位置由文档流控制</h6>zadsfasdf
+
+    <hr>
+
+    <div class="parent">
+        <div class="child">childchildchildchildchild<br>childchildchildchildchildchildchildchild<br>childchildchildchildchildchildchildchild<br>ildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchild<br>childchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchildchild</div>
+    </div>
+
+    <hr>
+    
+    <div class="container">
+        <div class="inner"></div>
+    </div>
+    
+    <hr>
+
+    <div class="container1">
+    <ul>
+        <li>子元素1</li>
+        <li>子元素2</li>
+        <li>子元素3</li>
+        <li>子元素4</li>
+        <li>子元素5</li>
+        <li>子元素6</li>
+        <li>子元素7</li>
+        <li>子元素8</li>
+    </ul>
+
+    <hr>
+    <div class="element-prt">
+        <div class="element element1">元素1</div>
+        <div class="element element2">元素2</div>
+        <div class="element element3">元素3</div> 
+    </div>
+    
+
+    <hr>
+    <div class="square-prt">
+        <div class="square"></div>
+    </div>
+
+    <hr>
+
+    <div id="wrap">
+        <div id="left">
+            <p>style="height:50px"</p>
+        </div>
+        <div id="center">
+            <p>style="height:100px"</p>
+        </div>
+        <div id="right">
+            <p>style="height:200px"</p>
+        </div>
+    </div>
+    
+</div>
+
+</body>
+</html>
