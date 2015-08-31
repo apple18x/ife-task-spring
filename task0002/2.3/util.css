@@ -1,0 +1,19 @@
+body {
+    padding: 0;
+    margin: 0; 
+}
+
+.red-color{
+    color: red;
+}
+
+.yellow-bg{
+    background-color: yellow;
+}
+
+#blue-square{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin-left: 50px;
+}

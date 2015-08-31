@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.3 </title>
+    <link rel="stylesheet" href="util.css">
+</head>
+<body>
+    <h3>为元素增加新样式</h3>
+    <p id="p1">我是被增加了新样式的元素p</p>
+    
+    <h3>为元素删除新样式</h3>
+    <p id="p2" class="red-color yellow-bg">我是被删除了新样式的元素p，原颜色为红色</p>
+    
+    <h3>判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值</h3>
+    <div class="sibling">
+        <ul class="parent1">
+            <li id = "child">我是子元素i</li>
+            <li>我是子元素ii</li>
+            <li id = "sibling">我是子元素iii</li>
+        </ul>
+        <ul class="parent2">
+            <li>我是子元素1</li>
+            <li>我是子元素2</li>
+            <li>我是子元素3</li>
+        </ul>
+    </div>
+
+    <h3>获取元素相对于浏览器窗口的位置</h3>
+    <div id = "blue-square"></div>
+
+    <script type="text/javascript" src="util.js"></script>
+    <script>
+        var p1 = document.getElementById("p1");
+        addClass(p1,"red-color");
+
+        var p2 = document.getElementById("p2");
+        removeClass(p2,"red-color");
+
+        var child = document.getElementById("child");
+        var sibling = document.getElementById("sibling");
+        document.write("是否为同一父元素下的子元素：" + isSiblingNode(child, sibling));
+        
+        var blueSquare = document.getElementById("blue-square");
+        document.write("元素相对于浏览器窗口的位置：(" + getPosition(blueSquare).x + ", "+ getPosition(blueSquare).y + ")");
+    
+        $("#adom"); // 返回id为adom的DOM对象
+    </script>
+</body>
+</html>
