@@ -1,3 +1,35 @@
+function $(id) {
+    return document.getElementById(id);
+}
+
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+function renderResult(result) {
+    $("result").innerHTML = result;
+}
+
+function addEventHandle() {
+    var num1 = $("number1").value;
+    var num2 = $("number2").value;
+    var result = add(num1, num2);
+    renderResult(result);
+}
+
+// function initEvent() {
+//     $("addbtn").addEventListener("click", addEventHandle, false);
+// }
+
+// initEvent();
+
+
+
+
+
+
+
+
 // 判断arr是否为一个数组，返回一个bool值
 function isArray(arr) {
     return (typeof arr =='object') && arr.constructor == Array; 
@@ -177,74 +209,171 @@ function isMobilePhone(phone) {
 
 }
 
+// 为element增加一个样式名为newClassName的新样式
+function addClass(element, newClassName) {
+    if (!element.className) { 
+        element.className = newClassName; 
+    }else { 
+        newClass = element.className; 
+        newClass += " "; 
+        newClass += newClassName; 
+        element.className = newClass; 
+    } 
+}
 
-window.onload = function() {
-    // 1. 判断arr是否为一个数组
-    var arr = new Array("1","2"); 
-    document.getElementById("judge-arr").innerText = 'Array("1","2") ' + "is an array: " + isArray(arr);
-    console.log(new Date().valueOf());
-    // 判断fn是否为一个函数
-    var myFunc = function(){}; 
-    document.getElementById("judge-func").innerText = 'myFunc ' + "is a function: " + isFunction(myFunc);
+// 移除element中的样式oldClassName
+function removeClass(element, oldClassName) {
+    // 若只有一个样式
+    if (element.className.length ==  oldClassName.length ) {
+        element.removeAttribute("class"); 
+    }else {
+        var classlist = element.className;
+        var regExp = eval("/\\s*" + oldClassName + "\\s*/");
 
-    // 2. 值类型和引用类型
-    // 实现深度克隆
-    var srcObj = {
-        a: 1,
-        b: {
-            b1: ["hello", "hi"],
-            b2: "JavaScript"
-        }
-    };
-    var abObj = srcObj;
-    var tarObj = cloneObject(srcObj);
-
-    srcObj.a = 2;
-    srcObj.b.b1[0] = "Hello";
-
-    console.log(abObj.a);
-    console.log(abObj.b.b1[0]);
-
-    console.log(tarObj.a);      // 1
-    console.log(tarObj.b.b1[0]);    // "hello"
-
-    // 3. 数组、字符串、数字
-    var a = [1, 3, 5, 7, 5, 3];
-    var b = uniqArray4(a);
-    console.log(b); // [1, 3, 5, 7]
-
-
-    // 4. 去除字符串头部和尾部空白字符
-    var str = '          hi!          ';
-    str = simpleTrim(str);
-    console.log(str); 
-
-    str = trim(str);
-    console.log(str); 
-
-
-    // 5. 遍历数组
-    var arr = ['java', 'c', 'php', 'html'];
-    function output(item) {
-        console.log(item)
+        classlist.replace(regExp,"");
+        element.className = classlist.replace(regExp,"");
     }
-    each(arr, output);  // java, c, php, html
-
-    // 6. 获取一个对象里面第一层元素的数量，返回一个整数
-    var obj = {
-        a: 1,
-        b: 2,
-        c: {
-            c1: 3,
-            c2: 4
-        }
-    };
-    console.log(getObjectLength(obj)); // 3
-
-
-    // 7. 判断是否为邮箱、手机地址
-    console.log(isEmail("xyang4173@sina.com"));
-    console.log(isMobilePhone("15801008930"));
 
 }
 
+// 判断siblingNode和element是否为同一个父元素下的同一级的元素，返回bool值
+function isSiblingNode(element, siblingNode) {
+    var isSibling = false;
+    var p = element.parentNode.children;
+
+    for(var i =0; i < p.length; i++) {
+        if(p[i] == element) {
+            isSibling = true;
+            break;
+        }
+    }
+    return isSibling;
+}
+
+// 获取element相对于浏览器窗口的位置，返回一个对象{x, y}
+function getPosition(element) {
+    var xPos = element.offsetLeft;
+    var yPos = element.offsetTop;
+
+    return {
+        x: xPos,
+        y: yPos
+    };
+}
+
+
+// 实现一个简单的Query
+function $(selector) {
+    var rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/;
+    this.context = selector.context;
+    var match = rquickExpr.exec(selector);
+    
+    if ( match && (match[1] || !context) ) {
+        var elem = document.getElementById( match[2] );
+        return elem;
+    }    
+}
+
+
+// 给一个element绑定一个针对event事件的响应，响应函数为listener
+function addEvent(element, event, listener) {
+    // your implement
+}
+
+// 例如：
+function clicklistener(event) {
+    
+}
+// addEvent($("#doma"), "click", a);
+
+// 移除element对象对于event事件发生时执行listener的响应
+function removeEvent(element, event, listener) {
+    // your implement
+}
+
+// 实现对click事件的绑定
+function addClickEvent(element, listener) {
+    // your implement
+}
+
+// 实现对于按Enter键时的事件绑定
+function addEnterEvent(element, listener) {
+    // your implement
+}
+
+
+
+
+
+
+// 判断是否为IE浏览器，返回-1或者版本号
+function isIE() {
+
+    // 只有IE浏览器支持ActiveXObject，但IE11除外
+    var isIE = "ActiveXObject" in window ? true : false;
+     
+    if(isIE){
+        var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+        //非ie11返回true，ie11返回false
+        var appVer = reIE.test(navigator.appVersion);
+
+        // 非ie10及一下版本  
+        if(appVer) {    
+            return parseFloat(RegExp["$1"]);
+        }else{
+            return 11;
+        }
+    }else{
+        return -1;
+    }
+}
+
+// 设置cookie
+function setCookie(cookieName, cookieValue, expiredays) {
+    var exptime = new Date();  
+
+    //getTime()返回距1970.01.01之间的毫秒数，setTime()以毫秒设置 Date 对象，设置后日期变为过期时间
+    exptime.setTime(exptime.getTime() + expiredays * 24 * 3600 * 1000);
+    document.cookie = cookieName + "=" + escape(cookieValue) + ";expires=" + exptime.toGMTString();
+}
+
+// 获取cookie值
+// 注：chrome浏览器为了安全只支持online-cookie，不支持本地设置cookie。因此需要在非chrome浏览器下检查下面的代码
+function getCookie(cookieName) {
+    var arrStr = document.cookie.split(";"); 
+    
+    for(var i = 0;i < arrStr.length;i ++){ 
+        var cookiePair = arrStr[i].split("="); 
+        if(cookiePair[0] == cookieName) return unescape(cookiePair[1]); 
+    }
+    // 正则表达式方法
+    // var arr;
+    // var reg=new RegExp("(^| )"+cookieName+"=([^;]*)(;|$)");
+ 
+    // if(arr=document.cookie.match(reg))
+    //     return (arr[2]);
+    // else
+    //     return null;
+}
+
+function ajax(url, options) {
+    method = options.type;
+    alert(options.onsuccess);
+
+    // var xmlhttp;
+    // if (window.XMLHttpRequest){
+    //     // code for IE7+, Firefox, Chrome, Opera, Safari
+    //     xmlhttp=new XMLHttpRequest();
+    // }else{
+    //     // code for IE6, IE5
+    //     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    // }
+
+    // xmlhttp.onreadystatechange=function(){
+    //     if(xmlhttp.readyState==4 && xmlhttp.status==200){
+    //        
+    //     }
+    // }
+    // xmlhttp.open(method,url,true);
+    // xmlhttp.send();
+}
