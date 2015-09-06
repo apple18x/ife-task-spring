@@ -346,18 +346,14 @@ function getCookie(cookieName) {
         var cookiePair = arrStr[i].split("="); 
         if(cookiePair[0] == cookieName) return unescape(cookiePair[1]); 
     }
-    // 正则表达式方法
-    // var arr;
-    // var reg=new RegExp("(^| )"+cookieName+"=([^;]*)(;|$)");
- 
-    // if(arr=document.cookie.match(reg))
-    //     return (arr[2]);
-    // else
-    //     return null;
 }
 
 function ajax(url, options) {
-    method = options.type;
+    var method = options.type;
+    var par = 
+    for (key in options.data){
+        console.log(key + ":" + options.data[key]);
+    }
     alert(options.onsuccess);
 
     // var xmlhttp;
