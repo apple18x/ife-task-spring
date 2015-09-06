@@ -350,10 +350,15 @@ function getCookie(cookieName) {
 
 function ajax(url, options) {
     var method = options.type;
-    var par = 
+    var par = "?";
+
+    //get方法通过url发送数据
     for (key in options.data){
-        console.log(key + ":" + options.data[key]);
+        par = par + key + "=" + options.data[key] + "&" ; 
     }
+    par = par.substring(0,par.length-1);
+
+    console.log(url+par);
     alert(options.onsuccess);
 
     // var xmlhttp;
