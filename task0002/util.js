@@ -348,33 +348,56 @@ function getCookie(cookieName) {
     }
 }
 
+//参考网址：http://caibaojian.com/ajax-jsonp.html
 function ajax(url, options) {
-    var method = options.type;
-    var par = "?";
+    options.type = (options.type || "GET").toUpperCase();
+    var params = formatParams(options.data);
 
-    //get方法通过url发送数据
-    for (key in options.data){
-        par = par + key + "=" + options.data[key] + "&" ; 
+    var xmlhttp;
+
+    // 第一步 - 创建
+    if (window.XMLHttpRequest){
+        // code for IE7+, Firefox, Chrome, Opera, Safari
+        // IE7及其以上版本中支持原生的 XHR 对象，因此可以直接用
+        xmlhttp = new XMLHttpRequest();
+    }else{
+        // code for IE6, IE5
+        // IE6及其之前的版本中，XHR对象是通过MSXML库中的一个ActiveX对象实现的
+        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
     }
-    par = par.substring(0,par.length-1);
 
-    console.log(url+par);
-    alert(options.onsuccess);
+    // 第三步 - 接收 
+    xmlhttp.onreadystatechange = function(){
+        if (xmlhttp.readyState == 4) {
+            var status = xmlhttp.status;
+            if (status == 200) {
+                options.onsuccess && options.onsuccess(xmlhttp.responseText, xmlhttp.responseXML);
+            } else {
+                options.onfail && options.onfail(status);
+            }
+        }
+    }
+    
+    // 第二步 - 连接和发送 
+    if(options.type == "GET"){
+         //get请求，通过URL参数将数据提交到服务器的
+         xmlhttp.open("GET" , url + "?" + params , true);
+         xmlhttp.send();
+    }else{
+         //post请求，通过将数据作为 send 的参数提交到服务器
+         xmlhttp.open("POST" , url , true);
+         xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+         xmlhttp.send(params);
+    }
+}
 
-    // var xmlhttp;
-    // if (window.XMLHttpRequest){
-    //     // code for IE7+, Firefox, Chrome, Opera, Safari
-    //     xmlhttp=new XMLHttpRequest();
-    // }else{
-    //     // code for IE6, IE5
-    //     xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    // }
-
-    // xmlhttp.onreadystatechange=function(){
-    //     if(xmlhttp.readyState==4 && xmlhttp.status==200){
-    //        
-    //     }
-    // }
-    // xmlhttp.open(method,url,true);
-    // xmlhttp.send();
+//格式化参数
+function formatParams(data){
+    var arr = [];
+    for (var name in data) {
+        // 提交到服务器的参数必须经过 encodeURIComponent() 方法进行编码
+        arr.push(encodeURIComponent(name) + "=" + encodeURIComponent(data[name]));
+    }
+    arr.push(("t=" + Math.random()).replace(".",""));
+    return arr.join("&");
 }

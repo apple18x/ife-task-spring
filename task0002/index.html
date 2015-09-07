@@ -160,6 +160,9 @@
                 },
                 onsuccess: function (responseText, xhr) {
                     console.log(responseText);
+                },
+                onfail: function (status) {
+                    // 此处放失败后执行的代码
                 }
             }
         );
